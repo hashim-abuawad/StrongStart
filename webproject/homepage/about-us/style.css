@@ -1,0 +1,167 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.button{
+    float: right;
+    color: rgb(228, 223, 221);
+  padding: 10px 25px;
+  border: 3px solid rgb(228, 223, 221);
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .button {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 14px;
+        float: none;
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
+    }
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+#logo{
+    width:  80px;
+    height: 80px;
+     
+    margin-right: 10px;
+}
+.site-name {
+    font-size: 2.9rem;
+    font-weight: bold;
+    color: #fff; 
+}
+#firstpart{
+    background-color: #000000;
+}
+
+
+#secondpart{
+    font-family: 'Arial', sans-serif;
+}
+body {
+    color: white;
+}
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro h1 {
+    text-decoration: underline;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.coach {
+    background-color: white;
+    color: #000000;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    transition: transform 0.3s;
+    border: 2px solid #ccc;
+}
+
+.coach:hover {
+    transform: scale(1.05);
+}
+
+.coach img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    border: 2px solid #ccc;
+}
+
+.coach img:hover {
+    transform: scale(1.1);
+}
+
+.coach h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.coach p {
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: white;
+    color: black;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.achievements {
+    background-color: white;
+    color: black;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    border: 2px solid #ccc;
+}
+
+.achievements:hover {
+    transform: scale(1.05);
+}
+
+.achievements h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.achievements p {
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: white;
+    color: black;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #ccc;
+}

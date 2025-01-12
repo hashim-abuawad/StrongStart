@@ -1,0 +1,93 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+
+}
+#secondpart{
+    font-family: sans-serif;
+}
+.button{
+    float: right;
+    color: rgb(228, 223, 221);
+  padding: 10px 25px;
+  border: 3px solid rgb(228, 223, 221);
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .button {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 14px;
+        float: none;
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
+    }
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+#logo{
+    width:  80px;
+    height: 80px;
+     
+    margin-right: 10px;
+}
+.site-name {
+    font-size: 2.9rem;
+    font-weight: bold;
+    color: white; 
+}
+#firstpart{
+    background-color: #000000;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(239, 242, 247);
+    color: black;
+    border-radius: 10px;
+}
+.story, .review {
+    background-color: #e0e6e7;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid #f1f1f1;
+    text-align: center;
+}
+.story img, .review img {
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f7f8fc;
+    border: 2px solid #e0e6e7;
+}
+.title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.story p, .review p {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f5f9;
+    color: #000;
+}
+

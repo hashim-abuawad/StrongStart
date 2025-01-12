@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logostrogstart (1).png">
+    <link rel="stylesheet" href="calcss.css">
+    <title>Calories Calculator</title>
+    
+
+</head>
+<body>
+    <h1>Calories Calculator</h1>
+    <p id="dateTime"></p>
+
+    <label for="height">Enter your height (in cm):</label>
+    <input type="number" id="height" placeholder="Enter height">
+    <span id="heightError" class="error"></span>
+<br>
+    <label for="weight">Enter your weight (in kg):</label>
+    <input type="number" id="weight" placeholder="Enter weight">
+    <span id="weightError" class="error"></span>
+<br>
+    <label for="lifestyle">Select your activity level:</label>
+    <select name="lifestyle" id="lifestyle">
+        <option value="sedentary" selected>Sedentary (little or no exercise)</option>
+        <option value="lightlyActive">Lightly active (light exercise/sports 1-3 days/week)</option>
+        <option value="moderatelyActive">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+        <option value="veryActive">Very active (hard exercise/sports 6-7 days a week)</option>
+        <option value="extraActive">Extra active (very hard exercise/sports & physical job or 2x training)</option>
+    </select>
+    <br>
+    <label>Gender: </label>
+    <br>
+    <label for="male">Male</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="female">Female</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <span id="genderError" class="error"></span>
+    <br><br>
+
+    <button onclick="calculateTotalCalories()">Calculate</button>
+
+    <textarea id="result" readonly></textarea>
+
+    <script>
+        function updateDateTime() {
+    var now = new Date();  
+    var dateTimeElement = document.getElementById("dateTime");  
+    dateTimeElement.innerText = "Date: " + now.toLocaleDateString() + ", Time: " + now.toLocaleTimeString();  
+}
+updateDateTime();  
+setInterval(updateDateTime, 1000); 
+
+        function calculateTotalCalories() {
+            //Reset error
+            document.getElementById('heightError').innerText = '';
+            document.getElementById('weightError').innerText = '';
+            document.getElementById('genderError').innerText = '';
+            
+            document.getElementById('height').classList.remove('invalid', 'valid');
+            document.getElementById('weight').classList.remove('invalid', 'valid');
+            
+
+           
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var height = parseFloat(document.getElementById('height').value);
+            var weight = parseFloat(document.getElementById('weight').value);
+            var lifestyle = document.getElementById('lifestyle').value;
+
+            var isValid = true;
+
+            if (isNaN(height) || height <= 0 || height > 300) {
+                document.getElementById('heightError').innerText = 'Please enter a valid height.';
+                document.getElementById('height').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('height').classList.add('valid');
+            }
+
+            if (isNaN(weight) || weight <= 0 || weight > 300) {
+                document.getElementById('weightError').innerText = 'Please enter a valid weight.';
+                document.getElementById('weight').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('weight').classList.add('valid');
+            }
+
+            if (!gender) {
+                document.getElementById('genderError').innerText = 'Please select your gender.';
+                isValid = false;
+            } 
+
+            if (!isValid) {
+                return; //Stop
+            }
+
+            
+            var bmr;
+            if (gender.value === 'male') {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * weight);
+            } else if (gender.value === 'female') {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * weight);
+            }
+
+            var totalCalories;
+            switch (lifestyle) {
+                case 'sedentary':
+                    totalCalories = bmr * 1.2;
+                    break;
+                case 'lightlyActive':
+                    totalCalories = bmr * 1.375;
+                    break;
+                case 'moderatelyActive':
+                    totalCalories = bmr * 1.55;
+                    break;
+                case 'veryActive':
+                    totalCalories = bmr * 1.725;
+                    break;
+                case 'extraActive':
+                    totalCalories = bmr * 1.9;
+                    break;
+                default:
+                    return;
+            }
+
+            
+            document.getElementById('result').value = "Height: " + height +"\n"+"weight: "+weight+"\n"+"lifeStyle: "+lifestyle+"\n"+"******************\n"+"Total calories: "+ totalCalories.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

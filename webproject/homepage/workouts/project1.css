@@ -1,0 +1,108 @@
+.button{
+    float: right;
+    color: rgb(228, 223, 221);
+  padding: 10px 25px;
+  border: 3px solid rgb(228, 223, 221);
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .button {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 14px;
+        float: none;
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
+    }
+}
+#logo{
+    width:  80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.site-name {
+    font-size: 2.9rem;
+    font-weight: bold;
+    color: #fff; 
+}
+.logo-container {
+    display: flex;
+    align-items: center; 
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.secondpart{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.card-container{
+    max-width: 80%;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 25px;
+
+}
+.card{
+    flex:1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.05);
+
+}
+.card img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+
+}
+.card-content{
+    padding: 20px;
+}
+.card-content h3{
+    color:#000000;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+.card-content p{
+    color:#333;
+    font-size: 17px;
+}
+@media screen and (max-width: 768px) {
+    .card{
+        flex: 100%;
+    }
+    
+}
+#firstpart{
+    background-color: #000000;
+}
+body{
+    background-image: url(background.jpg);
+}
+
+
+
+
+
+
+
+
+
+
